@@ -3,3 +3,4 @@ venv/
 .env
 __pycache__/
 *.pyc
+last_deep_charge_date.txt
