@@ -89,6 +89,9 @@ class LaptopClient:
         if self.last_deep_cycle_date is None or (now - self.last_deep_cycle_date).days > 61:
             return True
 
+        if self.last_deep_cycle_date is not None or (now - self.last_deep_cycle_date).days < 59:
+            return False
+
         # Every second month
         is_odd_month = now.month % 2 == 1
         is_between_9am_and_noon = 9 <= now.hour < 12
